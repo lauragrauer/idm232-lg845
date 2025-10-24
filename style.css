@@ -449,4 +449,75 @@ footer {
   }
 }
 
+.error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  background: linear-gradient(to bottom, #364025, #899064);
+  padding: 1rem;
+}
+
+.error-box {
+  background-color: var(--tan);
+  color: var(--brown-dark);
+  text-align: center;
+  padding: 3rem 4rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  animation: popIn 0.6s ease;
+}
+
+.error-box h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--brown-dark);
+}
+
+.error-icon {
+  width: 60px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+}
+
+.back-home {
+  background-color: var(--brown-dark);
+  color: var(--tan);
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.back-home:hover {
+  background-color: #5a3e2a;
+  transform: translateY(-2px);
+}
+
+main,
+.hero,
+.recipes,
+.recipe-page,
+.info-page {
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
