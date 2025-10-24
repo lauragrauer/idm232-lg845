@@ -108,12 +108,22 @@ header {
 }
 
 /* HERO */
+.hero {
+  padding: 2rem 6vw;
+  background-color: #202615;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
 .hero img {
   width: 100%;
-  display: block;
+  max-width: 1100px;
+  height: auto;
+  border-radius: 25px;
   object-fit: cover;
-  max-height: 60vh;
-  padding: 0 5vw;
 }
 
 /* INTRO */
@@ -140,6 +150,10 @@ header {
   background-color: var(--tan);
   color: var(--brown-dark);
   padding: 3rem 6vw;
+  margin: 3%;
+  border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .filter {
@@ -213,7 +227,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding-bottom: 4rem;
+  padding: 2rem;
 }
 
 .recipe-header {
@@ -434,3 +448,5 @@ footer {
     width: 100%;
   }
 }
+
+
