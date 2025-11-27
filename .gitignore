@@ -2,3 +2,5 @@ db_credentials.txt
 .DS_Store
 *.log
 .htaccess
+/.htaccess
+/_htaccess
