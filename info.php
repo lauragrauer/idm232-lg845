@@ -6,14 +6,10 @@
   <title>Info | Eat My Food</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<header>
-  <a href="index.html" class="logo">
-    <h1>EAT MY FOOD</h1>
-    <img src="images/sad-face-icon.png" alt="Sad face icon" class="sad-icon">
-  </a>
 
-  <div class="header-right">
-    <a href="info.html">
+<body>
+<div class="header-right">
+    <a href="info.php">
       <img src="images/question-thing.png" alt="Question icon" class="question-icon">
     </a>
     <button class="discover">🔍 DISCOVER A RECIPE</button>
@@ -41,5 +37,9 @@
   <footer>
     <p>LAURA GRAUER</p>
   </footer>
+
+  <?php
+  echo "Hello, World!";
+?>
 </body>
 </html>

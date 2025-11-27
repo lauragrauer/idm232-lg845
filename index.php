@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eat My Food</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<header>
+  <div class="logo">
+    <h1>EAT MY FOOD</h1>
+    <img src="images/sad-face-icon.png" alt="Sad face icon" class="sad-icon">
+  </div>
+  
+  <div class="header-right">
+    <a href="info.php">
+      <img src="images/question-thing.png" alt="Question icon" class="question-icon">
+    </a>
+    <button class="discover">🔍 DISCOVER A RECIPE</button>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="images/chicken-rice.jpg" alt="Cooking chicken in pan" />
+</section>
+
+<section class="intro">
+  <h2>PLEASE...</h2>
+  <p>Eat my food and use the recipe's provided on my page.</p>
+</section>
+
+<section class="recipes">
+  <h3 class="filter">FILTER ▼</h3>
+  <div class="cards">
+    <a href="recipe.php" class="card">
+      <img src="images/chicken-rice-2.jpg" alt="Chicken and Rice" />
+      <h4>CHICKEN AND RICE</h4>
+      <p>w/ pressed garlic</p>
+    </a>
+
+    <a href="recipe.php" class="card">
+      <img src="images/chicken-rice-2.jpg" alt="Chicken and Rice" />
+      <h4>CHICKEN AND RICE</h4>
+      <p>w/ pressed garlic</p>
+    </a>
+
+    <a href="recipe.php" class="card">
+      <img src="images/chicken-rice-2.jpg" alt="Chicken and Rice" />
+      <h4>CHICKEN AND RICE</h4>
+      <p>w/ pressed garlic</p>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>LAURA GRAUER</p>
+</footer>
+
+<?php
+  echo "Hello, World!";
+?>
+</body>
+</html>
