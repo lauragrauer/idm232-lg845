@@ -8,19 +8,33 @@
 </head>
 
 <body>
-  <header>
-    <a href="index.php" class="logo">
-      <h1>EAT MY FOOD</h1>
-      <img src="images/sad-face-icon.png" alt="Sad face icon" class="sad-icon">
+
+<header>
+  <a href="index.php" class="logo">
+    <h1>EAT MY FOOD</h1>
+    <img src="images/sad-face-icon.png" alt="Sad face icon" class="sad-icon">
+  </a>
+
+  <nav class="main-nav">
+    <a href="index.php" class="nav-link">Home</a>
+    <a href="recipe.php" class="nav-link">Recipes</a>
+  </nav>
+
+  <div class="header-right">
+    <a href="info.php">
+      <img src="images/question-thing.png" alt="info" class="question-icon">
     </a>
 
-    <div class="header-right">
-      <a href="info.php">
-        <img src="images/question-thing.png" alt="Question icon" class="question-icon">
-      </a>
-      <button class="discover" onclick="window.location.href='index.php'">🔍 DISCOVER A RECIPE</button>
-    </div>
-  </header>
+    <form action="index.php" method="get">
+      <input 
+        type="text"
+        name="search"
+        placeholder="Search recipes…"
+        class="pretty-search"
+      >
+    </form>
+  </div>
+</header>
 
   <main class="error-page">
     <div class="error-box">
@@ -33,17 +47,8 @@
     </div>
   </main>
 
-  <footer>
-    <p>LAURA GRAUER</p>
-  </footer>
-</body>
-
 <footer>
-  <p>LAURA GRAUER</p>
+  EAT MY FOOD • Drexel IDM 232 • <?php echo date("Y"); ?>
 </footer>
-
-<?php
-  echo "Hello, World!";
-?>
 </body>
 </html>

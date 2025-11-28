@@ -1,3 +1,26 @@
+<?php
+require_once 'db.php';
+
+$connection = db_connect();
+
+$random_id = null;
+
+$random_stmt = $connection->prepare("
+    SELECT id
+    FROM `idm232_recipes___sheet`
+    ORDER BY RAND()
+    LIMIT 1
+");
+
+if (!$random_stmt) {
+    die("Prepare failed: " . $connection->error);
+}
+
+$random_stmt->execute();
+$random_stmt->bind_result($random_id);
+$random_stmt->fetch();
+$random_stmt->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,38 +31,51 @@
 </head>
 
 <body>
-<div class="header-right">
+<header>
+  <a href="index.php" class="logo">
+    <h1>EAT MY FOOD</h1>
+    <img src="images/sad-face-icon.png" alt="Sad face icon" class="sad-icon">
+  </a>
+
+  <nav class="main-nav">
+    <a href="index.php" class="nav-link">Home</a>
+    <a href="recipe.php" class="nav-link">Recipes</a>
+  </nav>
+
+  <div class="header-right">
     <a href="info.php">
-      <img src="images/question-thing.png" alt="Question icon" class="question-icon">
+      <img src="images/question-thing.png" alt="info" class="question-icon">
     </a>
-    <button class="discover">🔍 DISCOVER A RECIPE</button>
+
+    <form action="index.php" method="get">
+      <input 
+        type="text"
+        name="search"
+        placeholder="Search recipes…"
+        class="pretty-search"
+      >
+    </form>
   </div>
 </header>
 
-  <main class="info-page">
-    <section class="info-intro">
-      <h2>WHAT IS EAT MY FOOD?</h2>
-      <p>
-        Self explanatory... Please, follow my recipes and eat my food.
-      </p>
-    </section>
+<main class="info-page">
+  <section class="info-intro">
+    <h2>WHAT IS EAT MY FOOD?</h2>
+    <p>Self explanatory... Please, follow my recipes and eat my food.</p>
+  </section>
 
-    <section class="faq">
-      <h3>FREQUENTLY ASKED QUESTIONS</h3>
-      <ul>
-        <li><strong>Where do the recipes come from?</strong> All recipes are inspired by me. I love eating.</li>
-        <li><strong>Can I submit my own recipe?</strong> Not yet, but the idea is simmering.</li>
-        <li><strong>Are these recipes healthy?</strong> No</li>
-      </ul>
-    </section>
-  </main>
+  <section class="faq">
+    <h3>FREQUENTLY ASKED QUESTIONS</h3>
+    <ul>
+      <li><strong>Where do the recipes come from?</strong> All recipes are inspired by me. I love eating.</li>
+      <li><strong>Can I submit my own recipe?</strong> Not yet, but the idea is simmering.</li>
+      <li><strong>Are these recipes healthy?</strong> No</li>
+    </ul>
+  </section>
+</main>
 
-  <footer>
-    <p>LAURA GRAUER</p>
-  </footer>
-
-  <?php
-  echo "Hello, World!";
-?>
+<footer>
+  EAT MY FOOD • Drexel IDM 232 • <?php echo date("Y"); ?>
+</footer>
 </body>
 </html>
