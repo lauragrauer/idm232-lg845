@@ -11,7 +11,6 @@ function is_drexel_host() {
 if (is_drexel_host()) {
     define("DB_SERVER",   "localhost");
     define("DB_USERNAME", "lg845");
-    define("DB_PASSWORD", "4v244nagodc1uFvo");
     define("DB_NAME",     "lg845_db");
 
 } else {
