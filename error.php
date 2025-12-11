@@ -9,46 +9,31 @@
 
 <body>
 
-<header>
-  <a href="index.php" class="logo">
-    <h1>EAT MY FOOD</h1>
-    <img src="images/sad-face-icon.png" alt="Sad face icon" class="sad-icon">
-  </a>
+<?php include 'header.php'; ?>
 
-  <nav class="main-nav">
-    <a href="index.php" class="nav-link">Home</a>
-    <a href="recipe.php" class="nav-link">Recipes</a>
-  </nav>
-
-  <div class="header-right">
-    <a href="info.php">
-      <img src="images/question-thing.png" alt="info" class="question-icon">
-    </a>
-
-    <form action="index.php" method="get">
-      <input 
-        type="text"
-        name="search"
-        placeholder="Search recipes…"
-        class="pretty-search"
-      >
-    </form>
+<!-- ERROR PAGE CONTENT -->
+<main class="error-page">
+  <div class="error-box">
+    <!-- Error Icon -->
+    <img src="images/sad-face-icon.png" alt="Sad face icon" class="error-icon">
+    
+    <!-- 404 Title -->
+    <h2>404</h2>
+    
+    <!-- Error Message -->
+    <p>Oops... the page you're looking for doesn't exist.</p>
+    <p>It might've been eaten 🍽️</p>
+    
+    <br>
+    
+    <!-- Back to Home Button -->
+    <button class="back-home" onclick="window.location.href='index.php'">
+      Go Back Home
+    </button>
   </div>
-</header>
+</main>
 
-  <main class="error-page">
-    <div class="error-box">
-      <img src="images/sad-face-icon.png" alt="Sad face icon" class="error-icon">
-      <h2>404</h2>
-      <p>Oops... the page you’re looking for doesn’t exist.</p>
-      <p>It might’ve been eaten 🍽️</p>
-      <br>
-      <button class="back-home" onclick="window.location.href='index.php'">Go Back Home</button>
-    </div>
-  </main>
+<?php include 'footer.php'; ?>
 
-<footer>
-  EAT MY FOOD • Drexel IDM 232 • <?php echo date("Y"); ?>
-</footer>
 </body>
 </html>

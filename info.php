@@ -1,26 +1,3 @@
-<?php
-require_once 'db.php';
-
-$connection = db_connect();
-
-$random_id = null;
-
-$random_stmt = $connection->prepare("
-    SELECT id
-    FROM `idm232_recipes___sheet`
-    ORDER BY RAND()
-    LIMIT 1
-");
-
-if (!$random_stmt) {
-    die("Prepare failed: " . $connection->error);
-}
-
-$random_stmt->execute();
-$random_stmt->bind_result($random_id);
-$random_stmt->fetch();
-$random_stmt->close();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,39 +8,18 @@ $random_stmt->close();
 </head>
 
 <body>
-<header>
-  <a href="index.php" class="logo">
-    <h1>EAT MY FOOD</h1>
-    <img src="images/sad-face-icon.png" alt="Sad face icon" class="sad-icon">
-  </a>
 
-  <nav class="main-nav">
-    <a href="index.php" class="nav-link">Home</a>
-    <a href="recipe.php" class="nav-link">Recipes</a>
-  </nav>
+<?php include 'header.php'; ?>
 
-  <div class="header-right">
-    <a href="info.php">
-      <img src="images/question-thing.png" alt="info" class="question-icon">
-    </a>
-
-    <form action="index.php" method="get">
-      <input 
-        type="text"
-        name="search"
-        placeholder="Search recipes…"
-        class="pretty-search"
-      >
-    </form>
-  </div>
-</header>
-
+<!-- INFO PAGE CONTENT -->
 <main class="info-page">
+  <!-- About Section -->
   <section class="info-intro">
     <h2>WHAT IS EAT MY FOOD?</h2>
     <p>Self explanatory... Please, follow my recipes and eat my food.</p>
   </section>
 
+  <!-- FAQ Section -->
   <section class="faq">
     <h3>FREQUENTLY ASKED QUESTIONS</h3>
     <ul>
@@ -74,8 +30,7 @@ $random_stmt->close();
   </section>
 </main>
 
-<footer>
-  EAT MY FOOD • Drexel IDM 232 • <?php echo date("Y"); ?>
-</footer>
+<?php include 'footer.php'; ?>
+
 </body>
 </html>
